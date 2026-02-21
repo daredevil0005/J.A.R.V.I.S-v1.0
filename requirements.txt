@@ -1,0 +1,9 @@
+livekit-agents
+livekit-plugins-google
+python-dotenv
+requests
+fuzzywuzzy
+pyautogui
+pynput
+pywin32
+google-api-python-client
