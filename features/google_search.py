@@ -1,5 +1,7 @@
 import os
 import requests
+import webbrowser
+import urllib.parse
 import logging
 from dotenv import load_dotenv
 from livekit.agents import function_tool
@@ -57,6 +59,10 @@ async def google_search(query: str) -> str:
         formatted_results.append(f"{i}. {title}. {snippet}")
 
         logger.info(f"{i}. {title} - {snippet}")
+    encoded_query = urllib.parse.quote(query)
+    browser_url = f"https://www.google.com/search?q={encoded_query}"
+    webbrowser.open(browser_url)
+
     set_last_action(f"Searched Google for: {query}")
 
     return " ".join(formatted_results)
@@ -66,3 +72,13 @@ async def google_search(query: str) -> str:
 async def get_current_datetime() -> str:
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
+@function_tool
+async def google_image_search(query: str) -> str:
+    encoded_query = urllib.parse.quote(query)
+    url = f"https://www.google.com/search?tbm=isch&q={encoded_query}"
+
+    webbrowser.open(url)
+
+    set_last_action(f"Searched Google Images for: {query}")
+
+    return f"Here are some images of {query}."
