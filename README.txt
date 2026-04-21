@@ -22,9 +22,7 @@ It allows users to interact using voice commands and perform tasks like searchin
 
 ## 🏗️ System Architecture
 
-```
 User → LiveKit UI → Assistant Core → AI Model → Tool Modules → Operating System
-```
 
 ---
 
@@ -55,9 +53,7 @@ Make sure you have installed:
 
 ### 1️⃣ Clone or Open Project
 
-```bash
 cd e:\Github\J.A.R.V.I.S-v1.0
-```
 
 ---
 
@@ -65,21 +61,15 @@ cd e:\Github\J.A.R.V.I.S-v1.0
 
 ### Step 1: Create Virtual Environment
 
-```bash
 py -m venv .venv
-```
 
 ### Step 2: Activate Virtual Environment
 
-```bash
 .\.venv\Scripts\Activate.ps1
-```
 
 ### Step 3: Install Dependencies
 
-```bash
 python -m pip install -r requirements.txt
-```
 
 ---
 
@@ -87,14 +77,12 @@ python -m pip install -r requirements.txt
 
 Create a `.env` file in root folder and add:
 
-```
 GOOGLE_API_KEY=your_api_key
 GOOGLE_SEARCH_API_KEY=your_search_key
 SEARCH_ENGINE_ID=your_engine_id
 LIVEKIT_URL=your_livekit_url
 LIVEKIT_API_KEY=your_livekit_key
 LIVEKIT_API_SECRET=your_livekit_secret
-```
 
 👉 This keeps sensitive data secure.
 
@@ -102,9 +90,7 @@ LIVEKIT_API_SECRET=your_livekit_secret
 
 ## ▶️ Run Backend (Jarvis Agent)
 
-```bash
 python agent.py console
-```
 
 ✔ Starts AI assistant
 ✔ Handles voice + commands
@@ -118,23 +104,17 @@ Open new terminal:
 
 ### Step 1: Navigate to UI folder
 
-```bash
 cd agent-ui
-```
 
 ### Step 2: Install dependencies
 
-```bash
 npm install
-```
 
 ---
 
 ## ▶️ Run Frontend
 
-```bash
 npm run dev
-```
 
 ---
 
@@ -142,9 +122,7 @@ npm run dev
 
 Open in browser:
 
-```
 http://localhost:3000
-```
 
 ---
 
@@ -217,7 +195,6 @@ Jarvis can remember user information.
 
 ## 🧩 Project Structure
 
-```
 J.A.R.V.I.S/
 │
 ├── agent.py           # Main assistant logic
@@ -226,7 +203,6 @@ J.A.R.V.I.S/
 ├── agent-ui/          # Frontend (LiveKit UI)
 ├── requirements.txt   # Python dependencies
 └── .env               # Environment variables
-```
 
 ---
 
