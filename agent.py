@@ -15,7 +15,8 @@ from features.Apps import (
     open_app, close_app,
     maximize_window, minimize_window,
     restore_window, focus_window,
-    open_folder, close_folder
+    open_folder, close_folder,
+    open_file, close_file
 )
 from features.jarvis_control import shutdown_jarvis
 from features.screenshot import take_screenshot
@@ -33,6 +34,7 @@ from features.energy_saver import energy_saver_on, energy_saver_off
 from features.brightness import set_brightness, brightness_up, brightness_down
 from memory.memory_tools import remember_fact, recall_fact
 from features.media_control import pause_media, play_media, next_media, previous_media
+from features.music import load_local_music, play_music, pause_music, next_track, previous_track, search_music
 
 # ---- Setup ----
 load_dotenv()
@@ -89,6 +91,7 @@ class Assistant(Agent):
                 maximize_window, minimize_window,
                 restore_window, focus_window,
                 open_folder, close_folder,
+                open_file, close_file,
 
                 # Memory
                 remember_fact, recall_fact,
@@ -96,6 +99,11 @@ class Assistant(Agent):
                 # Media
                 pause_media, play_media,
                 next_media, previous_media,
+
+                # Music
+                load_local_music, play_music,
+                pause_music, next_track,
+                previous_track, search_music,
 
                 # Explanation
                 explain_last_action,
