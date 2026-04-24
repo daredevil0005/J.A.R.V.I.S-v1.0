@@ -7,8 +7,8 @@ from livekit.agents import AgentSession, Agent
 from livekit.plugins import google
 
 # ---- Feature Imports ----
-from features.prompts import AGENT_INSTRUCTION as behavior_prompts
-from features.prompts import SESSION_INSTRUCTION
+from prompts import AGENT_INSTRUCTION as behavior_prompts
+from prompts import SESSION_INSTRUCTION
 from features.weather import get_weather
 from features.google_search import google_search
 from features.Apps import (
