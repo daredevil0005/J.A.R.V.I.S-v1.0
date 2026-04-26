@@ -69,7 +69,14 @@ User → LiveKit UI → Assistant Core → AI Model → Tool Modules → Operati
 
 ## 📸 Demo
 
+### 🖥️ Home Screen
+![UI](assets/1.png)
 
+### 🎤 Voice Interaction
+![Voice](assets/2.png)
+
+### 🎤 Text Interaction
+![Voice](assets/3.png)
 
 Examples:
 
