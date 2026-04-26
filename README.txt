@@ -1,9 +1,26 @@
-# 🤖 J.A.R.V.I.S v1.0
+# 🤖 J.A.R.V.I.S AI Voice Assistant
 
-### (Just A Rather Very Intelligent System)
+> 🚀 Real-time AI assistant with automation, memory, and system control
 
-J.A.R.V.I.S is a **real-time AI voice assistant** that combines **Conversational AI + System Automation** using Python and LiveKit.
-It allows users to interact using voice commands and perform tasks like searching, opening applications, controlling system settings, and storing memory.
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey)
+
+---
+
+## 🎯 Overview
+
+J.A.R.V.I.S (Just A Rather Very Intelligent System) is a **real-time AI-powered voice assistant** that combines **Conversational AI + System Automation**.
+
+It allows users to interact using voice commands and perform tasks like:
+
+* Opening applications
+* Searching the web
+* Controlling system settings
+* Managing media playback
+* Storing and recalling memory
+
+Built using **LiveKit + Google Realtime AI**, this project demonstrates practical implementation of modern AI systems.
 
 ---
 
@@ -11,12 +28,25 @@ It allows users to interact using voice commands and perform tasks like searchin
 
 * 🎤 Real-time voice interaction
 * 🧠 AI-powered responses (Google Realtime Model)
-* ⚙️ System automation (open apps, control WiFi, brightness, etc.)
-* 🌐 Google search (opens browser + voice summary)
+* ⚙️ System automation (open apps, WiFi, brightness, etc.)
+* 🌐 Google search with voice summary
 * 🖼️ Image search support
 * 🧾 Memory storage & recall
 * 🔊 Voice response output
-* 🌍 LiveKit-based frontend UI
+* 🌍 LiveKit-based web UI
+
+---
+
+## 🧠 What Makes This Project Special
+
+* ⚡ Real-time streaming using LiveKit
+* 🤖 AI + Automation combined in one system
+* 🎵 Smart media control:
+  * YouTube (Play, Pause, Next, Previous)
+  * VLC Media Player
+  * System media (Spotify, etc.)
+* 🧾 Memory system for personalized interaction
+* 🌐 Full-stack architecture (Python + Node.js frontend)
 
 ---
 
@@ -30,52 +60,45 @@ User → LiveKit UI → Assistant Core → AI Model → Tool Modules → Operati
 
 * Python
 * LiveKit (Realtime Communication)
-* Google Realtime AI
-* Node.js (Frontend)
+* Google Realtime AI (Gemini)
+* Node.js
 * WebRTC
-* JavaScript (UI)
+* JavaScript
 
 ---
 
-## 📋 Prerequisites
+## 📸 Demo
 
-Make sure you have installed:
 
-* 🪟 Windows OS
-* 🐍 Python 3.11 or higher
-* 🟢 Node.js 20+
-* 📦 npm (comes with Node.js)
-* 🔧 Git (optional)
 
----
+Examples:
 
-## 📂 Project Setup
-
-### 1️⃣ Clone or Open Project
-
-cd e:\Github\J.A.R.V.I.S-v1.0
+* UI running in browser
+* Voice interaction
+* Terminal output
 
 ---
 
-## ⚙️ Backend Setup (Python)
+## ⚙️ Installation & Setup
 
-### Step 1: Create Virtual Environment
+### 1️⃣ Clone Repository
+
+git clone https://github.com/daredevil0005/J.A.R.V.I.S-v1.0.git
+cd J.A.R.V.I.S-v1.0
+
+---
+
+### 2️⃣ Backend Setup (Python)
 
 py -m venv .venv
-
-### Step 2: Activate Virtual Environment
-
 .\.venv\Scripts\Activate.ps1
-
-### Step 3: Install Dependencies
-
 python -m pip install -r requirements.txt
 
 ---
 
-## 🔐 Environment Variables Setup
+### 3️⃣ Environment Variables
 
-Create a `.env` file in root folder and add:
+Create `.env` file in root folder:
 
 GOOGLE_API_KEY=your_api_key
 GOOGLE_SEARCH_API_KEY=your_search_key
@@ -84,43 +107,23 @@ LIVEKIT_URL=your_livekit_url
 LIVEKIT_API_KEY=your_livekit_key
 LIVEKIT_API_SECRET=your_livekit_secret
 
-👉 This keeps sensitive data secure.
-
 ---
 
-## ▶️ Run Backend (Jarvis Agent)
+### 4️⃣ Run Backend
 
 python agent.py console
 
-✔ Starts AI assistant
-✔ Handles voice + commands
-✔ Connects to LiveKit
-
 ---
 
-## 🌐 Frontend Setup (LiveKit UI)
-
-Open new terminal:
-
-### Step 1: Navigate to UI folder
+### 5️⃣ Frontend Setup
 
 cd agent-ui
-
-### Step 2: Install dependencies
-
 npm install
-
----
-
-## ▶️ Run Frontend
-
 npm run dev
 
 ---
 
-## 🌍 Open Application
-
-Open in browser:
+### 6️⃣ Open Application
 
 http://localhost:3000
 
@@ -129,14 +132,8 @@ http://localhost:3000
 ## ⚠️ Important Notes
 
 * Run backend and frontend in **separate terminals**
-
-  👉 Terminal 1 → Python Backend
-  👉 Terminal 2 → Frontend
-
 * Ensure `.env` file is properly configured
-
 * Internet connection is required
-
 * Microphone permission must be enabled
 
 ---
@@ -144,12 +141,13 @@ http://localhost:3000
 ## 🧠 How It Works
 
 1. User gives voice command
-2. LiveKit captures and sends audio
-3. Assistant processes input using AI
-4. If query → AI responds
-5. If command → Tool executes action
-6. OS performs action
-7. Jarvis gives voice response
+2. LiveKit captures and streams audio
+3. AI processes input
+4. Assistant decides:
+   * Response → AI reply
+   * Action → Tool execution
+5. System performs action
+6. Jarvis responds via voice
 
 ---
 
@@ -157,32 +155,32 @@ http://localhost:3000
 
 ### Example: “Open Chrome”
 
-* Input → Voice command
-* Processing → Assistant detects intent
-* Execution → Calls tool function
-* Output → Chrome opens + voice confirmation
+* 🎤 Input → Voice command
+* 🧠 Processing → Intent detection
+* ⚙️ Execution → Tool function call
+* ✅ Output → Chrome opens + voice confirmation
 
 ---
 
 ## 🧾 Memory System
 
-Jarvis can remember user information.
+Jarvis can store and recall user data.
 
-### Example:
+Example:
 
 * “Remember my name is Pratik”
 * “What is my name?”
 
 ✔ Stored in memory module
-✔ Retrieved when needed
+✔ Retrieved dynamically
 
 ---
 
 ## 🔍 Google Search Feature
 
-* Searches using API
+* Uses search API
 * Opens browser automatically
-* Gives voice summary
+* Provides voice summary
 
 ---
 
@@ -195,22 +193,24 @@ Jarvis can remember user information.
 
 ## 🧩 Project Structure
 
+```
 J.A.R.V.I.S/
 │
-├── agent.py           # Main assistant logic
-├── features/          # Tool modules (functions)
-├── memory/            # Memory storage system
-├── agent-ui/          # Frontend (LiveKit UI)
-├── requirements.txt   # Python dependencies
-└── .env               # Environment variables
+├── agent.py
+├── features/
+├── memory/
+├── agent-ui/
+├── requirements.txt
+└── .env
+```
 
 ---
 
 ## 🔐 Security
 
 * API keys stored in `.env`
-* Only predefined commands allowed
-* No direct OS access without tools
+* No hardcoded secrets
+* Controlled system access via tools
 
 ---
 
@@ -228,11 +228,11 @@ Tested for:
 
 ## 🚀 Future Scope
 
-* Mobile application
+* Wake word detection (“Hey Jarvis”)
 * Cloud deployment
+* Mobile app
 * Multi-user support
 * Smart home integration
-* Advanced NLP improvements
 
 ---
 
@@ -244,10 +244,10 @@ Tested for:
 
 ## 🎯 Conclusion
 
-J.A.R.V.I.S successfully integrates **AI + Automation + Real-time communication** to create an intelligent voice assistant system. It demonstrates practical implementation of modern AI technologies in real-world applications.
+J.A.R.V.I.S demonstrates **real-time AI interaction + automation + system control** in a single integrated system.
+
+It showcases how modern AI technologies can be applied to build intelligent, interactive applications.
 
 ---
 
-## ⭐ Final Note
-
-> This project showcases how AI can be used to create interactive and intelligent systems that enhance user experience through voice-based automation.
+⭐ If you like this project, consider giving it a star!
