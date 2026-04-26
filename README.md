@@ -70,7 +70,7 @@ User → LiveKit UI → Assistant Core → AI Model → Tool Modules → Operati
 ## 📸 Demo
 
 ### 🖥️ Home Screen
-<p align="center">
+<p align="left">
   <img src="assets/1.png" width="70%" />
 </p>
 ![UI](assets/1.png)
