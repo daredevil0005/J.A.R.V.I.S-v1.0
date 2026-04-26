@@ -73,19 +73,16 @@ User → LiveKit UI → Assistant Core → AI Model → Tool Modules → Operati
 <p align="left">
   <img src="assets/1.png" width="70%" />
 </p>
-![UI](assets/1.png)
 
 ### 🎤 Voice Interaction
-<p align="center">
+<p align="left">
   <img src="assets/2.png" width="70%" />
 </p>
-![Voice](assets/2.png)
 
 ### 🎤 Text Interaction
-<p align="center">
+<p align="left">
   <img src="assets/3.png" width="70%" />
 </p>
-![Voice](assets/3.png)
 
 Examples:
 
