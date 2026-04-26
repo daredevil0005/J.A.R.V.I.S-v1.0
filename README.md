@@ -113,12 +113,12 @@ python -m pip install -r requirements.txt
 
 Create `.env` file in root folder:
 
-GOOGLE_API_KEY=your_api_key
-GOOGLE_SEARCH_API_KEY=your_search_key
-SEARCH_ENGINE_ID=your_engine_id
-LIVEKIT_URL=your_livekit_url
-LIVEKIT_API_KEY=your_livekit_key
-LIVEKIT_API_SECRET=your_livekit_secret
+GOOGLE_API_KEY=your_api_key, 
+GOOGLE_SEARCH_API_KEY=your_search_key, 
+SEARCH_ENGINE_ID=your_engine_id, 
+LIVEKIT_URL=your_livekit_url, 
+LIVEKIT_API_KEY=your_livekit_key, 
+LIVEKIT_API_SECRET=your_livekit_secret, 
 
 ---
 
