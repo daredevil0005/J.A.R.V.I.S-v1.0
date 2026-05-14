@@ -14,10 +14,13 @@ import { useAgentErrors } from '@/hooks/useAgentErrors';
 import { useDebugMode } from '@/hooks/useDebug';
 import { getSandboxTokenSource } from '@/lib/utils';
 
-const IN_DEVELOPMENT = process.env.NODE_ENV !== 'production';
+/** Verbose LiveKit client logging (debug) is very expensive in the browser; opt in with NEXT_PUBLIC_LK_DEBUG=true */
+const LIVEKIT_CLIENT_DEBUG =
+  typeof process.env.NEXT_PUBLIC_LK_DEBUG === 'string' &&
+  process.env.NEXT_PUBLIC_LK_DEBUG === 'true';
 
 function AppSetup() {
-  useDebugMode({ enabled: IN_DEVELOPMENT });
+  useDebugMode({ enabled: LIVEKIT_CLIENT_DEBUG });
   useAgentErrors();
 
   return null;

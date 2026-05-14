@@ -24,7 +24,7 @@ const VIEW_MOTION_PROPS = {
   animate: 'visible' as const,
   exit: 'hidden' as const,
   transition: {
-    duration: 0.5,
+    duration: process.env.NODE_ENV === 'development' ? 0.22 : 0.5,
     ease: [0.25, 0.1, 0.25, 1] as const,
   },
 };
