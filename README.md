@@ -96,8 +96,8 @@ Examples:
 
 ### 1️⃣ Clone Repository
 
-git clone https://github.com/daredevil0005/J.A.R.V.I.S-v1.0.git
-cd J.A.R.V.I.S-v1.0
+1.git clone https://github.com/daredevil0005/J.A.R.V.I.S-v1.0.git
+2.cd J.A.R.V.I.S-v1.0
 
 ---
 
