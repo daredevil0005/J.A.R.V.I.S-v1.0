@@ -4,6 +4,8 @@ python-dotenv
 requests
 fuzzywuzzy
 pyautogui
+spotipy
+pygame
 pynput
 pywin32
 google-api-python-client

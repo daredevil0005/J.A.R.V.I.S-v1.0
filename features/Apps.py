@@ -168,3 +168,48 @@ async def close_folder() -> str:
         return "Folder window closed"
     set_last_action("Attempted to close a folder window, but no folder window was active.")
     return "No folder window is currently active"
+
+
+@function_tool()
+async def open_file(file_path: str) -> str:
+    """
+    Open any file from its full path.
+    Example:
+    C:/Users/Name/Desktop/report.pdf
+    """
+    if not file_path or not file_path.strip():
+        return "Please provide a file path"
+
+    if not os.path.exists(file_path):
+        return "File path does not exist"
+
+    try:
+        os.startfile(file_path)
+        set_last_action(f"Opened file {file_path}.")
+        return f"Opened file {file_path}"
+    except Exception as e:
+        set_last_action(f"Failed to open file {file_path}.")
+        return f"Could not open file: {e}"
+
+
+@function_tool()
+async def close_file(file_path: str) -> str:
+    """
+    Close a file window by its path or filename.
+    """
+    if not file_path or not file_path.strip():
+        return "Please provide a file path or name"
+
+    target_name = os.path.basename(file_path).lower()
+    target_stem = os.path.splitext(target_name)[0].lower()
+
+    for title in gw.getAllTitles():
+        title_lower = title.lower()
+        if target_name in title_lower or target_stem in title_lower:
+            win = gw.getWindowsWithTitle(title)[0]
+            win.close()
+            set_last_action(f"Closed file window for {file_path}.")
+            return f"Closed {title}"
+
+    set_last_action(f"Attempted to close file {file_path}, but no matching window was found.")
+    return f"No open window found for {file_path}"
