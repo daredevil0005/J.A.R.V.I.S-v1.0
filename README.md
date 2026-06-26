@@ -103,42 +103,42 @@ Examples:
 
 ### 2️⃣ Backend Setup (Python)
 
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
+* py -m venv .venv
+* .\.venv\Scripts\Activate.ps1
+* python -m pip install -r requirements.txt
 
 ---
 
 ### 3️⃣ Environment Variables
 
-Create `.env` file in root folder:
+* Create `.env` file in root folder:
 
-GOOGLE_API_KEY=your_api_key, 
-GOOGLE_SEARCH_API_KEY=your_search_key, 
-SEARCH_ENGINE_ID=your_engine_id, 
-LIVEKIT_URL=your_livekit_url, 
-LIVEKIT_API_KEY=your_livekit_key, 
-LIVEKIT_API_SECRET=your_livekit_secret, 
+* GOOGLE_API_KEY=your_api_key, 
+* GOOGLE_SEARCH_API_KEY=your_search_key, 
+* SEARCH_ENGINE_ID=your_engine_id, 
+* LIVEKIT_URL=your_livekit_url, 
+* LIVEKIT_API_KEY=your_livekit_key, 
+* LIVEKIT_API_SECRET=your_livekit_secret, 
 
 ---
 
 ### 4️⃣ Run Backend
 
-python agent.py console
+* python agent.py console
 
 ---
 
 ### 5️⃣ Frontend Setup
 
-cd agent-ui
-npm install
-npm run dev
+* cd agent-ui
+* npm install
+* npm run dev
 
 ---
 
 ### 6️⃣ Open Application
 
-http://localhost:3000
+* http://localhost:3000
 
 ---
 
