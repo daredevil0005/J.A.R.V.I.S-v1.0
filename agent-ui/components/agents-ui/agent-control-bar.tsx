@@ -331,41 +331,6 @@ export function AgentControlBar({
             />
           )}
 
-          {/* Toggle Camera */}
-          {visibleControls.camera && (
-            <AgentTrackControl
-              variant={variant === 'outline' ? 'outline' : 'default'}
-              kind="videoinput"
-              aria-label="Toggle camera"
-              source={Track.Source.Camera}
-              pressed={cameraToggle.enabled}
-              pending={cameraToggle.pending}
-              disabled={cameraToggle.pending}
-              onPressedChange={cameraToggle.toggle}
-              onMediaDeviceError={handleCameraDeviceSelectError}
-              onActiveDeviceChange={handleVideoDeviceChange}
-              className={cn(
-                variant === 'livekit' && [
-                  LK_TOGGLE_VARIANT_1,
-                  'rounded-full [&_button:first-child]:rounded-l-full [&_button:last-child]:rounded-r-full',
-                ]
-              )}
-            />
-          )}
-
-          {/* Toggle Screen Share */}
-          {visibleControls.screenShare && (
-            <AgentTrackToggle
-              variant={variant === 'outline' ? 'outline' : 'default'}
-              aria-label="Toggle screen share"
-              source={Track.Source.ScreenShare}
-              pressed={screenShareToggle.enabled}
-              disabled={screenShareToggle.pending}
-              onPressedChange={screenShareToggle.toggle}
-              className={cn(variant === 'livekit' && [LK_TOGGLE_VARIANT_2, 'rounded-full'])}
-            />
-          )}
-
           {/* Toggle Transcript */}
           {visibleControls.chat && (
             <Toggle

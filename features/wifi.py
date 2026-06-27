@@ -26,16 +26,6 @@ def _wifi_available() -> bool:
     return "state" in output
 
 
-def _validate_ssid(ssid: str) -> bool:
-    """Reject SSIDs that are unsafe for subprocess arguments or invalid for typical Wi‑Fi."""
-    if not ssid or len(ssid) > 32:
-        return False
-    unsafe = {'"', "'", "&", "|", ";", "\n", "\r", "\x00"}
-    if any(c in ssid for c in unsafe):
-        return False
-    return all(32 <= ord(c) <= 126 for c in ssid)
-
-
 # ---------- WIFI ON ----------
 @function_tool()
 async def wifi_on() -> str:
@@ -66,6 +56,7 @@ async def scan_wifi() -> str:
     output = subprocess.check_output(
         ["netsh", "wlan", "show", "networks", "mode=Bssid"],
         text=True,
+        shell=True
     )
 
     networks = []
@@ -88,13 +79,11 @@ async def connect_wifi(ssid: str) -> str:
     if not _wifi_available():
         return "Wi-Fi is turned off. Please turn on Wi-Fi before connecting."
 
-    if not _validate_ssid(ssid):
-        return "Invalid Wi-Fi network name. Use a normal SSID (1–32 printable characters)."
-
     result = subprocess.run(
         ["netsh", "wlan", "connect", f"name={ssid}"],
         capture_output=True,
         text=True,
+        shell=True
     )
 
     if result.returncode == 0:
@@ -116,6 +105,7 @@ async def disconnect_wifi() -> str:
         ["netsh", "wlan", "disconnect"],
         capture_output=True,
         text=True,
+        shell=True
     )
     set_last_action("Disconnected from the current Wi-Fi network.")
     return "Wi-Fi disconnected from the current network."

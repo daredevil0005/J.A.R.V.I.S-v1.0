@@ -11,7 +11,7 @@ from prompts import AGENT_INSTRUCTION as behavior_prompts
 from prompts import SESSION_INSTRUCTION
 from features.weather import get_weather
 from features.google_search import google_search
-from features.Apps import (
+from features.apps import (
     open_app, close_app,
     maximize_window, minimize_window,
     restore_window, focus_window,

@@ -9,26 +9,6 @@ type ConnectionDetails = {
   participantToken: string;
 };
 
-/** LiveKit agent names: restrict to safe token characters (avoid odd JWT / dispatch values). */
-const AGENT_NAME_PATTERN = /^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,62}$/;
-
-function parseAgentName(body: unknown): string | undefined {
-  if (!body || typeof body !== 'object') return undefined;
-  const roomConfig = (body as { room_config?: { agents?: unknown } }).room_config;
-  const agents = roomConfig?.agents;
-  if (!Array.isArray(agents) || agents.length === 0) return undefined;
-  const first = agents[0];
-  if (!first || typeof first !== 'object') return undefined;
-  const name = (first as { agent_name?: unknown }).agent_name;
-  if (typeof name !== 'string') return undefined;
-  const trimmed = name.trim();
-  if (!trimmed) return undefined;
-  if (!AGENT_NAME_PATTERN.test(trimmed)) {
-    throw new Error('Invalid agent name');
-  }
-  return trimmed;
-}
-
 // NOTE: you are expected to define the following environment variables in `.env.local`:
 const API_KEY = process.env.LIVEKIT_API_KEY;
 const API_SECRET = process.env.LIVEKIT_API_SECRET;
@@ -51,12 +31,7 @@ export async function POST(req: Request) {
 
     // Parse agent configuration from request body
     const body = await req.json();
-    let agentName: string | undefined;
-    try {
-      agentName = parseAgentName(body);
-    } catch {
-      return new NextResponse('Invalid agent name', { status: 400 });
-    }
+    const agentName: string = body?.room_config?.agents?.[0]?.agent_name;
 
     // Generate participant token
     const participantName = 'user';
